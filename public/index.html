@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Oswald:wght@500&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Oswald:wght@500&family=Source+Sans+Pro:ital,wght@0,300;0,700;0,900;1,300;1,600&display=swap" rel="stylesheet">
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -22,9 +24,28 @@
 
     <!-- Top nav bar (fixed) -->
     <nav>
-      <p>Hello, we are testing fonts right now</p>
+    
       <span>tweeter</span>
+      <div><p class="newTweet">
+
+        <strong >Write </strong>
+        &nbsp;
+        <span>  a new tweet</span>
+        </p>
+        <i class="fas fa-angle-double-down arrowHeader"></i>
+        
+      </div>
     </nav>
+  
+    <header>
+      <div>
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div>
+          <h2>Michael</h2>
+      </div>
+  </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container"></main>
