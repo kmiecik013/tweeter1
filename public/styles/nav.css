@@ -1,19 +1,19 @@
 nav {
-  height: 120px;
+  height: 130px;
   background-color:#4056A1;
   color: #FFFFFF;
   font-family: 'Bungee', sans-serif;
   padding: 1.5em; 
-  font-size: 30px;
+  font-size: 35px;
   display:flex;
   justify-content: space-between;
   position:relative;
-  z-index:1;
+  z-index:3;
 }
 
 .newTweet {
   font-family:'Source Sans Pro', sans-serif;
-  font-size: 20px;
+  font-size: 27px;  
 
   
 }
@@ -26,6 +26,9 @@ nav {
 
 .arrowHeader {
   color: #f00;
-  margin-left: 70px
+  margin-left: 90px;
+  font-size:30px;
+  margin: top 2px;  
+  
   
 }
