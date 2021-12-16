@@ -1,11 +1,11 @@
-header  {
-  height: 400px;
-  width: 100vw;
+.mainHeader  {
+  height: 570px;
+  width: 100%;
   background-color: #f5a300;
   background-image: url("https://www.transparenttextures.com/patterns/low-contrast-linen.png");
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   position: relative;
   z-index: 1;
@@ -13,5 +13,6 @@ header  {
 }
 
 .name {
-  color: #FFFFFF
+  color: #FFFFFF;
+  margin-bottom: 80px;
 }
