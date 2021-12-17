@@ -1,20 +1,5 @@
 $(document).ready(function() {
-
-/*
-  const $newBox = $("#tweet-text");
-  $newBox.keyup(function(e) {
-
-    let tweetLength = e.target.value.length;
-    
-    $('.counter').text(140 - tweetLength);
-
-    if(tweetLength > 140) {
-      $('.counter').css('color','red')
-    }else {
-      $('.counter').css('color','')
-    }
-  })
-*/
+  
 
 const $tweetBox = $("#tweet-text");
 
