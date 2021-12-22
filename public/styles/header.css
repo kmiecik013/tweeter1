@@ -1,5 +1,5 @@
 .mainHeader  {
-  height: 570px;
+  height: 450px;
   width: 100%;
   background-color: #f5a300;
   background-image: url("https://www.transparenttextures.com/patterns/low-contrast-linen.png");
@@ -9,10 +9,33 @@
   align-items: center;
   position: relative;
   z-index: 1;
+}
 
+.name {
+  color: #FFFFFF; 
+}
+
+@media only screen and (min-width:1024px) {
+
+.mainHeader  {
+  width:60%;
+  height:80;
+  background-color: #f5a300;
+  background-image: url("https://www.transparenttextures.com/patterns/low-contrast-linen.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.main-image {
+  size:50%;
 }
 
 .name {
   color: #FFFFFF;
   margin-bottom: 80px;
+}
 }

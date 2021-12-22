@@ -1,5 +1,22 @@
 nav {
-  width: 100%;
+  width: 100vw;
+  height: 80px;
+  background-color: #f5a300;
+  background-image: url("https://www.transparenttextures.com/patterns/low-contrast-linen.png");
+  color: #FFFFFF;
+  font-family: 'Bungee', sans-serif;
+  padding: 1.0em; 
+  font-size: 35px;
+  display:flex;
+  justify-content: space-between;
+  position:fixed;
+  top:0;
+  z-index:3;
+}
+
+@media only screen and (min-width:1024px) {
+  nav {
+  width: 100vw;
   height: 130px;
   background-color:#4056A1;
   color: #FFFFFF;
@@ -10,28 +27,22 @@ nav {
   justify-content: space-between;
   position:fixed;
   top:0;
-  z-index:3;
-  
+  z-index:3; 
+}
 }
 
 .newTweet {
   font-family:'Source Sans Pro', sans-serif;
-  font-size: 27px;  
-
-  
+  font-size: 27px;   
 }
 
 .newTweet strong {
   font-weight: 700;
  }
 
- 
-
 .arrowHeader {
   color: #f00;
   margin-left: 90px;
   font-size:30px;
-  margin: top 2px;  
-  
-  
+  margin: top 2px;   
 }
