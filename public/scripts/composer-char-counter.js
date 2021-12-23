@@ -16,7 +16,9 @@ const $tweetBox = $("#tweet-text");
     if (newValue < 0) {
       counter.css("color", "red");
     } else counter.css("color", '');
-  });  
+  });
+  
+  $tweetBox.focus()
 });
   
 
