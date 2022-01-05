@@ -79,7 +79,7 @@ $("#submit-form").submit(function(event) {
 
 
 const renderTweets = function(tweets) {
-  $("#main-container").empty(); 
+  $("#main-container").html(""); //had .empty before 
   for (let tweet of tweets) {
     let $tweet = createTweetElement(tweet)
     $("#main-container").prepend($tweet)

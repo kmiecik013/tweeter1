@@ -14,8 +14,8 @@ const $tweetBox = $("#tweet-text");
     counter.text(newValue);
 
     if (newValue < 0) {
-      counter.css("color", "red");
-    } else counter.css("color", '');
+      counter.addClass("negative-num");
+    } else counter.removeClass("negative-num");
   });
   
   $tweetBox.focus()

@@ -30,6 +30,10 @@ output {
   font-family:'Bungee', sans-serif;
 }
 
+.negative-num {
+  color:red
+}
+
 textarea {
   width: 100%;
   display: flex;
@@ -51,6 +55,8 @@ textarea {
   border-radius: 5px;
   font-size: 30px;
 }
+
+
 
 @media only screen and (min-width:1024px) {
 
