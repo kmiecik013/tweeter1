@@ -5,9 +5,9 @@
  */
 
 ////////----Creating functional tweeter container----///////
-$(document).ready(function() {
+$(document).ready(function () {
   const data = []
-  const createTweetElement = function(tweet) {
+  const createTweetElement = function (tweet) {
     let $tweet = $(`<article class="tweet-container">
     <header class="tweet-header">
       <div class="header-content">
@@ -28,65 +28,65 @@ $(document).ready(function() {
       </div>
     </footer>
   </article>`)
-  
-  return $tweet;
-}
 
-///-----Function to stop cross scripting attacks---///
-const escape = function (str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
+    return $tweet;
+  }
 
 
+  $("#submit-form").submit(function (event) {
+    event.preventDefault();
 
-$("#submit-form").submit(function(event) {
-  event.preventDefault();
-    
-  const serialized = $("#submit-form").serialize();
-  const textTweet = $("#tweet-text").val().length
-  const error = $("#error-message")
+    const serialized = $("#submit-form").serialize();
+    const textTweet = $("#tweet-text").val().length
+    const error = $("#error-message")
 
-  if(!textTweet) {
-    error.text("⛔ ----- Do not tweet blanks! ----- ⛔").slideDown();
-  } else if (textTweet > 140) {
-    error.text("⛔ ----- Do not exceed 140 characters! ----- ⛔").slideDown()
-  } else {
+    if (!textTweet) {
+      error.text("⛔ ----- Do not tweet blanks! ----- ⛔").slideDown();
+    } else if (textTweet > 140) {
+      error.text("⛔ ----- Do not exceed 140 characters! ----- ⛔").slideDown()
+    } else {
       error.slideUp(500)
 
-    $.ajax({
-      url: "/tweets/",
-      method: "POST",
-      data: serialized,
-    }).then(function() {
-     console.log('success');
-     loadTweets();
-    });
-    $("form").trigger("reset");
+      $.ajax({
+        url: "/tweets/",
+        method: "POST",
+        data: serialized,
+      }).then(function () {
+        console.log('success');
+        loadTweets();
+      });
+      $("form").trigger("reset");
+    }
+
+    
+    loadTweets()
+  })
+const loadTweets = function () {
+      $.ajax({
+        url: "/tweets",
+        method: "GET",
+      }).then(function (tweets) {
+        renderTweets(tweets);
+      })
+    }
+    loadTweets()
+
+const renderTweets = function (tweets) {
+    $("#main-container").html(""); //had .empty before 
+    for (let tweet of tweets) {
+      let $tweet = createTweetElement(tweet)
+      $("#main-container").prepend($tweet)
+    }
   }
+  renderTweets(data);
 
-  const loadTweets = function () {
-    $.ajax({
-      url:"/tweets",
-      method:"GET",
-    }).then(function(tweets){
-      renderTweets(tweets);
-    })
-  }
-  loadTweets()
-})
-
-
-const renderTweets = function(tweets) {
-  $("#main-container").html(""); //had .empty before 
-  for (let tweet of tweets) {
-    let $tweet = createTweetElement(tweet)
-    $("#main-container").prepend($tweet)
-  }  
-}
-renderTweets(data);
+const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
 });
 
+  
 
