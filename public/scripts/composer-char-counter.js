@@ -5,7 +5,7 @@ $(document).ready(function() {
 const $tweetBox = $("#tweet-text");
 
   $tweetBox.on("keyup", function() {
-
+    
     let count = $(this).val().length;
     let newValue = 140 - count;
 
@@ -17,7 +17,7 @@ const $tweetBox = $("#tweet-text");
       counter.addClass("negative-num");
     } else counter.removeClass("negative-num");
   });
-  
+    
   $tweetBox.focus()
 });
   

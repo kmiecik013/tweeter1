@@ -35,18 +35,21 @@ $(document).ready(function () {
 
   $("#submit-form").submit(function (event) {
     event.preventDefault();
-
+  
     const serialized = $("#submit-form").serialize();
     const textTweet = $("#tweet-text").val().length
     const error = $("#error-message")
 
+    if ($("#tweet-text").empty()){
+      $(".counter").text(140)
+    }
     if (!textTweet) {
       error.text("⛔ ----- Do not tweet blanks! ----- ⛔").slideDown();
     } else if (textTweet > 140) {
       error.text("⛔ ----- Do not exceed 140 characters! ----- ⛔").slideDown()
     } else {
       error.slideUp(500)
-
+    
       $.ajax({
         url: "/tweets/",
         method: "POST",
@@ -56,6 +59,8 @@ $(document).ready(function () {
         loadTweets();
       });
       $("form").trigger("reset");
+
+    
     }
 
     
@@ -76,6 +81,7 @@ const renderTweets = function (tweets) {
     for (let tweet of tweets) {
       let $tweet = createTweetElement(tweet)
       $("#main-container").prepend($tweet)
+    
     }
   }
   renderTweets(data);
